@@ -12,17 +12,17 @@
 
           {{#each post in model itemcontroller="author"}}
               <h2>
-                  {{post.title}}
+                  {{title}}
               </h2>
               <p class="lead">
-                  by {{post.author.name}}
+                  by {{author.name}}
             </p>
               
-               <p><span class="glyphicon glyphicon-time"></span> Posted on {{post.date}}</p>
+               <p><span class="glyphicon glyphicon-time"></span> Posted on {{date}}</p>
               <hr>
-              <img class="img-responsive" src={{post.img}} alt={{post.title}}>
+              <img class="img-responsive" src={{img}} alt={{title}}>
               <hr>
-              <p>{{post.bodyIntro}}</p> 
+              <p>{{bodyIntro}}</p> 
               {{#link-to 'post' post.id  class="btn btn-primary"}}Read More <span class="glyphicon glyphicon-chevron-right"></span>{{/link-to}}
 
                <hr>
