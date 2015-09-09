@@ -9,6 +9,7 @@ export default Ember.Controller.extend({
 			localStorage.clear();
 			console.log("Logged Out");
 				this.transitionToRoute('logout');
+				$('#userTagName').html('');
 		}
 	}
 });
