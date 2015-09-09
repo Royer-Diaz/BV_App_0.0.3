@@ -1,0 +1,36 @@
+ <!-- Three columns of text below the carousel -->
+      <nav class="navbar navbar-default">
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">All Types <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li>{{#link-to 'display-lib'}}Videos{{/link-to}}</li>
+                  <li>{{#link-to 'display-lib'}}Documentation{{/link-to}}</li>
+                  <li>{{#link-to 'display-lib'}}Something else here{{/link-to}}</li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">All Topics<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li>{{#link-to 'display-lib'}}ROI{{/link-to}}</li>
+                  <li>{{#link-to 'display-lib'}}Feed{{/link-to}}</li>
+                  <li>{{#link-to 'display-lib'}}Conversations{{/link-to}}</li>
+                  <li>{{#link-to 'display-lib'}}PRR{{/link-to}}</li>
+                  <li>{{#link-to 'display-lib'}}Conversations{{/link-to}}</li>
+                  <li>{{#link-to 'display-lib'}}Q.A{{/link-to}}</li>
+                  <li role="separator" class="divider"></li>
+                  <li>{{#link-to 'display-lib'}}Separated link{{/link-to}}</li>
+                </ul>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+       </nav>
+
+<h1>Library</h1>
+
+
+      {{outlet}}

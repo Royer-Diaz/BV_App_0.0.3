@@ -1,0 +1,50 @@
+<div class="container-fluid">
+
+        <div class="row">
+
+            <!-- Blog Entries Column -->
+            <div class="col-md-9">
+
+                <h1 class="page-header">
+                    Bazaarvoice Learning Center
+                    <small>Secondary Text</small>
+                </h1>
+
+          {{#each post in model itemcontroller="author"}}
+              <h2>
+                  {{post.title}}
+              </h2>
+              <p class="lead">
+                  by {{post.author.name}}
+            </p>
+              
+               <p><span class="glyphicon glyphicon-time"></span> Posted on {{post.date}}</p>
+              <hr>
+              <img class="img-responsive" src={{post.img}} alt={{post.title}}>
+              <hr>
+              <p>{{post.bodyIntro}}</p> 
+              {{#link-to 'post' post.id  class="btn btn-primary"}}Read More <span class="glyphicon glyphicon-chevron-right"></span>{{/link-to}}
+
+               <hr>
+         {{/each}}
+                    
+
+            {{#link-to 'new-post'}}<p>New Post</p>{{/link-to}}
+           
+            {{outlet}}
+         
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-3">
+
+                {{partial 'components/search'}}
+
+                {{partial 'components/categories'}}
+
+                {{partial 'components/well'}}
+
+            </div>
+        </div>
+        <!-- /.row -->
+</div>

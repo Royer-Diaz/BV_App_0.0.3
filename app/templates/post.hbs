@@ -1,0 +1,89 @@
+<div class="container">
+
+        <div class="row">
+
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-8">
+
+                <!-- Blog Post -->
+
+                <!-- Title -->
+                <h1>{{post.title}}</h1>
+
+                <!-- Author -->
+                <p class="lead">
+                    by <a href="#">{{author.name}}</a>
+                </p>
+
+                <hr>
+
+                <!-- Date/Time -->
+                <p><span class="glyphicon glyphicon-time"></span> Posted on {{date}}</p>
+
+                <hr>
+
+                <!-- Preview Image -->
+                <img class="img-responsive" src={{img}} alt={{title}} title={{title}}>
+
+                <hr>
+
+                <!-- Post Content -->
+                <p class="lead">{{bodyIntro}}</p>
+                <p>{{bodyRest}}</p>
+
+
+                {{#if isEditing}}
+				{{partial 'post/edit'}}
+				<button class="btn btn-default" {{action 'doneEditing'}}>Done</button>
+				{{else}}
+				<button class="btn btn-default" {{action 'edit'}}>Edit</button>
+				{{/if}}
+
+				<button class="btn btn-default" {{action 'delete'}}>Delete</button>
+
+				{{#link-to 'new-comment' classNames="btn btn-default"}}Add a comment{{/link-to}}
+
+				{{outlet}}
+
+				<hr>
+
+				<h4>Comments:</h4>
+
+				{{#each comment in comments}}
+				<!-- Posted Comments -->
+				    
+				<!-- Comment -->
+				<div class="media">
+    				<a class="pull-left" href="#">
+    				<img class="media-object" src="http://placehold.it/64x64" alt="">
+    				</a>
+    				<div class="media-body">
+        				<h4 class="media-heading">{{comment.user}}
+        				<small>{{comment.date}}</small>
+        				</h4>
+        				<p>{{comment.text}}</p>
+    				</div>
+				</div>
+				{{/each}}
+                
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4">
+
+                {{partial 'components/search'}}
+
+                {{partial 'components/categories'}}
+
+                {{partial 'components/well'}}
+
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+      
+
+</div>
